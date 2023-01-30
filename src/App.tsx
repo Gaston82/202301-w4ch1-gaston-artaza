@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./App.css";
-import Gentleman from "./components/Gentleman";
+import Gentleman from "./components/Gentleman/Gentleman";
 import { GentlemanStructure } from "./types";
+import "./components/Gentleman/Gentleman.css";
 
 const App = (): JSX.Element => {
   const [gentlemen] = useState<GentlemanStructure[]>([
@@ -39,16 +40,20 @@ const App = (): JSX.Element => {
 
   return (
     <>
-      <header>
-        <h1>The pointing gentlemen</h1>
-      </header>
-      <ul>
-        {gentlemen.map((gentleman) => (
-          <li key={gentleman.id}>
-            <Gentleman gentleman={gentleman} />
-          </li>
-        ))}
-      </ul>
+      <div className="container">
+        <header className="main-header">
+          <h1 className="main-title">The pointing gentlemen</h1>
+        </header>
+        <main className="main">
+          <ul className="gentlemen">
+            {gentlemen.map((gentleman) => (
+              <li className="gentleman" key={gentleman.id}>
+                <Gentleman gentleman={gentleman} />
+              </li>
+            ))}
+          </ul>
+        </main>
+      </div>
     </>
   );
 };

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./App.css";
-import { Gentleman } from "./types";
+import Gentleman from "./components/Gentleman";
+import { GentlemanStructure } from "./types";
 
 const App = (): JSX.Element => {
-  const [gentlemen] = useState<Gentleman[]>([
+  const [gentlemen] = useState<GentlemanStructure[]>([
     {
       id: 1,
       name: "Bertin Osborne",
@@ -43,13 +44,8 @@ const App = (): JSX.Element => {
       </header>
       <ul>
         {gentlemen.map((gentleman) => (
-          <li>
-            <article>
-              <h2>{gentleman.name}</h2>
-              <span>{gentleman.profession}</span>
-              <span>{gentleman.status}</span>
-              <span>{gentleman.twitter}</span>
-            </article>
+          <li key={gentleman.id}>
+            <Gentleman gentleman={gentleman} />
           </li>
         ))}
       </ul>

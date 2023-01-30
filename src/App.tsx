@@ -3,6 +3,7 @@ import "./App.css";
 import Gentleman from "./components/Gentleman/Gentleman";
 import { GentlemanStructure } from "./types";
 import "./components/Gentleman/Gentleman.css";
+import Info from "./components/Info/Info";
 
 const App = (): JSX.Element => {
   const [gentlemen] = useState<GentlemanStructure[]>([
@@ -44,6 +45,7 @@ const App = (): JSX.Element => {
         <header className="main-header">
           <h1 className="main-title">The pointing gentlemen</h1>
         </header>
+        <Info />
         <main className="main">
           <ul className="gentlemen">
             {gentlemen.map((gentleman) => (

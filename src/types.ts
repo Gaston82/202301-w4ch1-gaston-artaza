@@ -1,4 +1,4 @@
-export interface Gentleman {
+export interface GentlemanStructure {
   id: number;
   name: string;
   status: string;

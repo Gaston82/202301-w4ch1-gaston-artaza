@@ -17,7 +17,11 @@ const Gentleman = ({ gentleman, onDelete }: GentlemanProps): JSX.Element => {
       <div className="gentleman__avatar-container">
         <img
           className="gentleman__avatar"
-          src={`img/${gentleman.name}.jpg`}
+          src={`img/${gentleman.name
+            .toLowerCase()
+            .split(" ")
+            .splice(0, 1)
+            .join("")}.jpg`}
           alt="The Fary pointing at you"
         />
         <span className="gentleman__initial">F</span>

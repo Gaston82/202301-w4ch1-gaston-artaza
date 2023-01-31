@@ -51,7 +51,7 @@ const App = (): JSX.Element => {
         <header className="main-header">
           <h1 className="main-title">The pointing gentlemen</h1>
         </header>
-        <Info />
+        <Info gentlemen={gentlemen} />
         <main className="main">
           <ul className="gentlemen">
             {gentlemen.map((gentleman) => (

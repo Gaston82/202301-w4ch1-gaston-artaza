@@ -14,6 +14,14 @@ const Gentleman = ({ gentleman, onDelete }: GentlemanProps): JSX.Element => {
 
   return (
     <>
+      <div className="gentleman__avatar-container">
+        <img
+          className="gentleman__avatar"
+          src={`img/${gentleman.name}.jpg`}
+          alt="The Fary pointing at you"
+        />
+        <span className="gentleman__initial">F</span>
+      </div>
       <article className="gentleman__data-container">
         <h2 className="gentleman__name">{gentleman.name}</h2>
         <ul className="gentleman__data-list">

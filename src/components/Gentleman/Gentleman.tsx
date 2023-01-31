@@ -4,9 +4,14 @@ import "./Gentleman.css";
 
 interface GentlemanProps {
   gentleman: GentlemanStructure;
+  onDelete: (id: number) => void;
 }
 
-const Gentleman = ({ gentleman }: GentlemanProps): JSX.Element => {
+const Gentleman = ({ gentleman, onDelete }: GentlemanProps): JSX.Element => {
+  const handleDeleteGentleman = (): void => {
+    onDelete(gentleman.id);
+  };
+
   return (
     <>
       <article className="gentleman__data-container">
@@ -31,6 +36,13 @@ const Gentleman = ({ gentleman }: GentlemanProps): JSX.Element => {
         <span className="gentleman__data-label">{gentleman.status}</span>
         <span className="gentleman__data-label">{gentleman.twitter}</span>
       </article>
+      <i className="icon gentleman__icon fas fa-check">v</i>
+
+      <button className="button" onClick={handleDeleteGentleman}>
+        <i className="icon gentleman__icon gentleman__icon--delete fas fa-times">
+          x
+        </i>
+      </button>
     </>
   );
 };

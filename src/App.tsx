@@ -19,7 +19,7 @@ const App = (): JSX.Element => {
     },
     {
       id: 2,
-      name: "The Farytale",
+      name: "Fary",
       status: "RIP",
       profession: "Influencer",
       twitter: "pending",
@@ -29,7 +29,7 @@ const App = (): JSX.Element => {
     },
     {
       id: 3,
-      name: "Julius Churchs",
+      name: "Julio Churchs",
       status: "Alive",
       profession: "Java developer",
       twitter: "@julius_churchs",

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./App.css";
 import Gentleman from "./components/Gentleman/Gentleman";
 import { GentlemanStructure } from "./types";
 import "./components/Gentleman/Gentleman.css";

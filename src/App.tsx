@@ -6,7 +6,7 @@ import "./components/Gentleman/Gentleman.css";
 import Info from "./components/Info/Info";
 
 const App = (): JSX.Element => {
-  const [gentlemen] = useState<GentlemanStructure[]>([
+  const [gentlemen, setGentlemen] = useState<GentlemanStructure[]>([
     {
       id: 1,
       name: "Bertin Osborne",
@@ -39,6 +39,13 @@ const App = (): JSX.Element => {
     },
   ]);
 
+  const deleteGentlemanById = (id: number): void => {
+    const gentlemenUpdated = gentlemen.filter((gentleman) => {
+      return gentleman.id !== id;
+    });
+    setGentlemen(gentlemenUpdated);
+  };
+
   return (
     <>
       <div className="container">
@@ -50,7 +57,10 @@ const App = (): JSX.Element => {
           <ul className="gentlemen">
             {gentlemen.map((gentleman) => (
               <li className="gentleman" key={gentleman.id}>
-                <Gentleman gentleman={gentleman} />
+                <Gentleman
+                  gentleman={gentleman}
+                  onDelete={deleteGentlemanById}
+                />
               </li>
             ))}
           </ul>
